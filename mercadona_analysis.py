@@ -12,3 +12,18 @@ productos
 #%%
 avg_price=productos.price_euros.mean()
 avg_price
+#%% Avg price per category
+productos.groupby('category').price_euros.mean()
+
+#%% Total number of products
+productos.name.drop_duplicates().count()
+
+#%% 
+registros_cafes=productos.name.str.contains('café')
+
+productos[registros_cafes]
+
+#%%
+tamaño_file=322000
+en_30_dias_mb=tamaño_file*30/1024/1024
+
