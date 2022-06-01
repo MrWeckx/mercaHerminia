@@ -26,4 +26,4 @@ productos[registros_cafes]
 #%%
 tamaño_file=322000
 en_30_dias_mb=tamaño_file*30/1024/1024
-
+en_30_dias_mb*12
