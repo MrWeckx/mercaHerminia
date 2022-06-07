@@ -84,7 +84,7 @@ def initialize_mercadona_web_driver():
     driver = webdriver.Firefox()
 
     driver.get('https://tienda.mercadona.es/categories/112')
-    time.sleep(5)
+    time.sleep(10)
     element=driver.find_element_by_name("postalCode")
     element.send_keys('28043')
     # element.find_element_by_tag_name("BUTTON").click()
@@ -115,7 +115,7 @@ def travel_through_categories_and_generat_dict_categories(driver,categories_page
     for page_id in tqdm(categories_pages):
         page='https://tienda.mercadona.es/categories/'+str(page_id)
         driver.get(page)
-        time.sleep(5)
+        time.sleep(8)
         soup= BeautifulSoup(driver.page_source, 'html.parser')
         product_data=[get_table_register_from_product_cell(cell) for cell in get_mercadona_product_cells(soup)]
         dict_pages[page_id]=product_data

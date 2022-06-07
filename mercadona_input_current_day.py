@@ -21,8 +21,10 @@ from mercadona import *
 from secrets import *
 
 NEXTCLOUD_DATA_ROUTE=py_secrets.NEXTCLOUD_DATA_ROUTE_SECRET
+PROJECT_DIR='/home/mrweckx/Projects/selenium'
 
 if __name__ == '__main__':
+    os.chdir(PROJECT_DIR)
     driver=initialize_mercadona_web_driver()
     current_categories=load_current_categories()
     dict_res=travel_through_categories_and_generat_dict_categories(driver,current_categories)
